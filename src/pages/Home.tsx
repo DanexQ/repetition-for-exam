@@ -20,7 +20,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <SHomeContainer>
       <SHomeHeader color={color}>
         <span>Powtórz</span>
         {!!lang && <SLanguage color={color}>{lang}</SLanguage>}
@@ -32,7 +32,7 @@ const Home = () => {
         <SChoice
           bgcol="#EED81C"
           onMouseEnter={() => handleChangeTitle("JavaScript", "#EED81C")}
-          onClick={() => handleNavigate("javascript")}
+          onClick={() => handleNavigate("js")}
         >
           JavaScript
         </SChoice>
@@ -65,7 +65,7 @@ const Home = () => {
           CSS
         </SChoice>
       </SChoicesContainer>
-    </>
+    </SHomeContainer>
   );
 };
 
@@ -89,13 +89,13 @@ const animationSlide = keyframes`
   }
 `;
 
-const hoverAnimation = keyframes`
-0%{
-  transform: translate(25%);
-}
-100%{
-  transform: translate(10%);
-}
+const SHomeContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #222;
 `;
 
 const SHomeHeader = styled.div<{ color: string }>`

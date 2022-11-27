@@ -4,14 +4,31 @@ import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import JS from "./pages/JS";
+import CSS from "./pages/CSS";
+import PHP from "./pages/PHP";
+import SQL from "./pages/SQL";
+import HTML from "./pages/HTML";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Layout from "./components/Layout";
 
 function App() {
   return (
     <SAppContainer>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/topic" element={<Navbar />}>
-          <Route path="javascript" element={<JS />} />
+        <Route
+          path="/topic"
+          element={
+            <ProtectedRoute>
+              <Layout />
+            </ProtectedRoute>
+          }
+        >
+          <Route path="js" element={<JS />} />
+          <Route path="php" element={<PHP />} />
+          <Route path="css" element={<CSS />} />
+          <Route path="html" element={<HTML />} />
+          <Route path="sql" element={<SQL />} />
         </Route>
       </Routes>
     </SAppContainer>
@@ -21,10 +38,7 @@ function App() {
 export default App;
 
 const SAppContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
   background-color: #222;
+  min-height: 100vh;
+  background-color: red;
 `;
