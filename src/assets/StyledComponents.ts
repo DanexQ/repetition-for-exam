@@ -3,19 +3,18 @@ import styled from "styled-components";
 export const SContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 120rem;
-  margin: 0 auto;
   align-items: center;
   justify-content: center;
+  max-width: 120rem;
   gap: 4rem;
-  color: #fff;
+  color: #ededed;
 `;
 
 export const SSection = styled.section`
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 100%;
 `;
 
 export const SSectionTitle = styled.h2`
@@ -29,4 +28,21 @@ export const SSectionContent = styled.p`
   text-align: justify;
 `;
 
-export const SSectionImg = styled.div``;
+export const SSectionImg = styled.div<{ flex?: true }>`
+  display: grid;
+  place-items: center;
+
+  ${({ flex }) =>
+    flex &&
+    `
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    img{
+      max-width: 90%;
+    }
+  `}
+`;
+
+export const SSpanBold = styled.span`
+  font-weight: 700;
+`;

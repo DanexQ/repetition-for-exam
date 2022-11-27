@@ -5,18 +5,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Overpass";
-}
-
-#root {
-  width: 100vw;
-  height: 100vh;
 }
 
 html {
   font-size: 62.5%;
 }
 
+body {
+  font-family: "Overpass";
+}
+
 img {
-  max-width: 60%;
+  max-width: 50%;
+  border-radius: 1rem;
 }

@@ -35,16 +35,13 @@ const SNavbarContainer = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 1rem;
-  background-color: red;
   padding: 5rem 0;
-  max-width: 120rem;
   margin: 0 auto;
 `;
 
 const SNavbarMenu = styled.div`
   display: flex;
   justify-content: center;
-  background-color: red;
   gap: 4rem;
 `;
 

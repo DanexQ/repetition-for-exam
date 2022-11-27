@@ -40,5 +40,4 @@ export default App;
 const SAppContainer = styled.div`
   background-color: #222;
   min-height: 100vh;
-  background-color: red;
 `;
