@@ -28,7 +28,7 @@ export const SSectionContent = styled.p`
   text-align: justify;
 `;
 
-export const SSectionImg = styled.div<{ flex?: true }>`
+export const SSectionImg = styled.div<{ flex?: true; big?: true }>`
   display: grid;
   place-items: center;
 
@@ -39,6 +39,14 @@ export const SSectionImg = styled.div<{ flex?: true }>`
     gap: 2rem;
     img{
       max-width: 90%;
+    }
+  `}
+
+  ${({ big }) =>
+    big &&
+    `
+    img{
+      max-width: 70%;
     }
   `}
 `;

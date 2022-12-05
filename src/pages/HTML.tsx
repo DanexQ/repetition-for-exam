@@ -4,7 +4,6 @@ import {
   SSectionContent,
   SSectionImg,
   SSectionTitle,
-  SSpanBold,
 } from "../assets/StyledComponents";
 
 const HTML = () => {

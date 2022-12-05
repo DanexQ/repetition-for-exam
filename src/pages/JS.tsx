@@ -136,7 +136,7 @@ const JS = () => {
         </SSectionImg>
       </SSection>
 
-      <SSection>
+      <SSection id="petle">
         <SSectionTitle>Pętle</SSectionTitle>
         <SSectionContent>
           Pętlę <SSpanBold>for</SSpanBold> używamy, gdy znana jest liczba
