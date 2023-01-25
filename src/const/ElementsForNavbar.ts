@@ -8,7 +8,7 @@ export const navbarRawElements = [
     color: "#E34E27",
   },
   {
-    name: "sql",
+    name: "mysql",
     color: "#FF9A00",
   },
   {
@@ -16,7 +16,7 @@ export const navbarRawElements = [
     color: "#767AB3",
   },
   {
-    name: "js",
+    name: "javascript",
     color: "#EED81C",
   },
 ];

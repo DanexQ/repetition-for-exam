@@ -4,6 +4,7 @@ import {
   SSectionContent,
   SSectionImg,
   SSectionTitle,
+  SImg,
 } from "../assets/StyledComponents";
 
 const HTML = () => {
@@ -28,7 +29,7 @@ const HTML = () => {
           ich nie zrobimy to tracimy głupie punkty.
         </SSectionContent>
         <SSectionImg>
-          <img src="../HTML/strukturaHTML.png" alt="HTML" />
+          <SImg src="../HTML/strukturaHTML.png" alt="HTML" />
         </SSectionImg>
       </SSection>
       <SSection>
@@ -40,7 +41,7 @@ const HTML = () => {
           (jeżeli o nich zapomnimy to divy są jedynym wyjściem):
         </SSectionContent>
         <SSectionImg>
-          <img src="../HTML/strukturaHTML2.png" alt="HTML2" />
+          <SImg src="../HTML/strukturaHTML2.png" alt="HTML2" />
         </SSectionImg>
       </SSection>
       <SSection>

@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const SImg = styled.img`
+  max-width: 50%;
+  border-radius: 1rem;
+`;
+
 export const SContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,7 +12,7 @@ export const SContainer = styled.div`
   justify-content: center;
   max-width: 120rem;
   gap: 4rem;
-  color: #ededed;
+  color: white;
 `;
 
 export const SSection = styled.section`

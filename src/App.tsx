@@ -8,7 +8,6 @@ import CSS from "./pages/CSS";
 import PHP from "./pages/PHP";
 import SQL from "./pages/SQL";
 import HTML from "./pages/HTML";
-import ProtectedRoute from "./components/ProtectedRoute";
 import Layout from "./components/Layout";
 
 function App() {
@@ -16,19 +15,12 @@ function App() {
     <SAppContainer>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/topic"
-          element={
-            <ProtectedRoute>
-              <Layout />
-            </ProtectedRoute>
-          }
-        >
-          <Route path="js" element={<JS />} />
+        <Route path="/" element={<Layout />}>
+          <Route path="javascript" element={<JS />} />
           <Route path="php" element={<PHP />} />
           <Route path="css" element={<CSS />} />
           <Route path="html" element={<HTML />} />
-          <Route path="sql" element={<SQL />} />
+          <Route path="mysql" element={<SQL />} />
         </Route>
       </Routes>
     </SAppContainer>
@@ -38,6 +30,6 @@ function App() {
 export default App;
 
 const SAppContainer = styled.div`
-  background-color: #222;
+  background-color: #343b47;
   min-height: 100vh;
 `;

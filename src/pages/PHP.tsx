@@ -6,6 +6,7 @@ import {
   SSectionImg,
   SSectionTitle,
   SSpanBold,
+  SImg,
 } from "../assets/StyledComponents";
 
 const PHP = () => {
@@ -27,7 +28,7 @@ const PHP = () => {
           znaczników {"<?php ?>"}
         </SSectionContent>
         <SSectionImg>
-          <img src="../PHP/podlaczenie.png" alt="Podłączenie" />
+          <SImg src="../PHP/podlaczenie.png" alt="Podłączenie" />
         </SSectionImg>
       </SSection>
       <SSection>
@@ -42,7 +43,7 @@ const PHP = () => {
           łączenia tekstu <SSpanBold>.</SSpanBold> (po prostu kropka).
         </SSectionContent>
         <SSectionImg>
-          <img src="../PHP/zmienne.png" alt="zmienne" />
+          <SImg src="../PHP/zmienne.png" alt="zmienne" />
         </SSectionImg>
       </SSection>
       <SSection>
@@ -56,7 +57,7 @@ const PHP = () => {
           Operatory logiczne są identyczne jak w JS (==, &&, ||).
         </SSectionContent>
         <SSectionImg>
-          <img src="../PHP/if.png" alt="Instrukcja if" />
+          <SImg src="../PHP/if.png" alt="Instrukcja if" />
         </SSectionImg>
       </SSection>
       <SSection>
@@ -70,7 +71,7 @@ const PHP = () => {
           i zakończenie połączenia z bazą.
         </SSectionContent>
         <SSectionImg big={true}>
-          <img src="../PHP/schemat.png" alt="Schemat" />
+          <SImg src="../PHP/schemat.png" alt="Schemat" />
         </SSectionImg>
         <SSectionContent>
           Powyżej znajduje się przykład poprawnego skryptu, pobierającego i
@@ -92,7 +93,7 @@ const PHP = () => {
           ustawiony(isset()) i czy nie jest pusty(!empty()).
         </SSectionContent>
         <SSectionImg big={true}>
-          <img src="../PHP/formularze.png" alt="Schemat" />
+          <SImg src="../PHP/formularze.png" alt="Schemat" />
         </SSectionImg>
         <SSectionContent>
           Powyżej jest przykład poprawnego skryptu, który pobiera dane z
@@ -112,7 +113,7 @@ const PHP = () => {
           {"<!DOCTYPE>"}).
         </SSectionContent>
         <SSectionImg>
-          <img src="../PHP/cookies.png" alt="Cookies" />
+          <SImg src="../PHP/cookies.png" alt="Cookies" />
         </SSectionImg>
       </SSection>
     </SContainer>

@@ -1,5 +1,3 @@
-import React from "react";
-import styled from "styled-components";
 import {
   SContainer,
   SSection,
@@ -7,6 +5,7 @@ import {
   SSectionImg,
   SSectionTitle,
   SSpanBold,
+  SImg,
 } from "../assets/StyledComponents";
 
 const JS = () => {
@@ -33,7 +32,7 @@ const JS = () => {
           pisać skrypt w dokumencie:
         </SSectionContent>
         <SSectionImg>
-          <img src="../JS/podlaczeniejs.png" alt="Podłączenie 1" />
+          <SImg src="../JS/podlaczeniejs.png" alt="Podłączenie 1" />
         </SSectionImg>
         <SSectionContent>
           Jeżeli chcemy nasz kod pisać w osobnym pliku (na egzaminie odradzam,
@@ -42,7 +41,7 @@ const JS = () => {
           tak) to musimy go podłączyć w taki sposób:
         </SSectionContent>
         <SSectionImg>
-          <img src="../JS/podlaczeniejs3.png" alt="Podłączenie 1" />
+          <SImg src="../JS/podlaczeniejs3.png" alt="Podłączenie 1" />
         </SSectionImg>
         <SSectionContent>
           Atrybut <SSpanBold>src</SSpanBold> wskazuje adres naszego skryptu,
@@ -78,7 +77,7 @@ const JS = () => {
           odpowiednimi nazwami::
         </SSectionContent>
         <SSectionImg>
-          <img src="../JS/zmienne.png" alt="Zmienne" />
+          <SImg src="../JS/zmienne.png" alt="Zmienne" />
         </SSectionImg>
       </SSection>
 
@@ -96,7 +95,7 @@ const JS = () => {
           ukazane w przykładzie:
         </SSectionContent>
         <SSectionImg>
-          <img src="../JS/if.png" alt="Instrukcja if" />
+          <SImg src="../JS/if.png" alt="Instrukcja if" />
         </SSectionImg>
         <SSectionContent>
           Szybkie omówienie przykładu: jeżeli cena farby jest mniejsza od 10 i
@@ -116,23 +115,23 @@ const JS = () => {
           na działanie skryptu.
         </SSectionContent>
         <SSectionImg flex={true}>
-          <img src="../JS/alert.png" alt="Alert" />
-          <img src="../JS/alertWynik.png" alt="Alert wynik" />
+          <SImg src="../JS/alert.png" alt="Alert" />
+          <SImg src="../JS/alertWynik.png" alt="Alert wynik" />
         </SSectionImg>
         <SSectionContent>
           Confirm ukazuje alert z dwoma przyciskami, które zwracają true albo
           false.
         </SSectionContent>
         <SSectionImg flex={true}>
-          <img src="../JS/confirm.png" alt="Confirm" />
-          <img src="../JS/confirmWynik.png" alt="Confirm wynik" />
+          <SImg src="../JS/confirm.png" alt="Confirm" />
+          <SImg src="../JS/confirmWynik.png" alt="Confirm wynik" />
         </SSectionImg>
         <SSectionContent>
           Za pomocą prompt można pobierać dane od użytkownika
         </SSectionContent>
         <SSectionImg flex={true}>
-          <img src="../JS/prompt.png" alt="Prompt" />
-          <img src="../JS/promptWynik.png" alt="Prompt wynik" />
+          <SImg src="../JS/prompt.png" alt="Prompt" />
+          <SImg src="../JS/promptWynik.png" alt="Prompt wynik" />
         </SSectionImg>
       </SSection>
 
@@ -144,7 +143,7 @@ const JS = () => {
           wykonywać pętle:
         </SSectionContent>
         <SSectionImg>
-          <img src="../JS/petlaFor.png" alt="Pętla for" />
+          <SImg src="../JS/petlaFor.png" alt="Pętla for" />
         </SSectionImg>
         <SSectionContent>
           Pętla <SSpanBold>while</SSpanBold> będzie wykonywana, aż do momentu w
@@ -153,7 +152,7 @@ const JS = () => {
           końcu, lecz zależy to od tego co chcemy wykonać.
         </SSectionContent>
         <SSectionImg>
-          <img src="../JS/petlaWhile.png" alt="Pętla while" />
+          <SImg src="../JS/petlaWhile.png" alt="Pętla while" />
         </SSectionImg>
         <SSectionContent>
           Pętla <SSpanBold>do...while</SSpanBold> w przeciwieństwie do pętli for
@@ -161,7 +160,7 @@ const JS = () => {
           jest na samym końcu pętli.
         </SSectionContent>
         <SSectionImg>
-          <img src="../JS/petlaDoWhile.png" alt="Pętla do...while" />
+          <SImg src="../JS/petlaDoWhile.png" alt="Pętla do...while" />
         </SSectionImg>
         <SSectionContent>
           <SSpanBold>Zapamiętaj!</SSpanBold> Każda pętla może zostać szybciej
@@ -181,7 +180,7 @@ const JS = () => {
           liczb oraz wywołanie jej w skrypcie.
         </SSectionContent>
         <SSectionImg>
-          <img src="../JS/funkcja.png" alt="Funkcja" />
+          <SImg src="../JS/funkcja.png" alt="Funkcja" />
         </SSectionImg>
       </SSection>
 
@@ -193,7 +192,7 @@ const JS = () => {
           funkcji, które na egzaminie mogą się przydać:
         </SSectionContent>
         <SSectionImg>
-          <img src="../JS/funkcjeWbudowane.png" alt="Funkcja" />
+          <SImg src="../JS/funkcjeWbudowane.png" alt="Funkcja" />
         </SSectionImg>
       </SSection>
 
@@ -207,8 +206,8 @@ const JS = () => {
           są poprawne:
         </SSectionContent>
         <SSectionImg flex={true}>
-          <img src="../JS/listener.png" alt="Zdarzenia" />
-          <img src="../JS/listener2.png" alt="Zdarzenia" />
+          <SImg src="../JS/listener.png" alt="Zdarzenia" />
+          <SImg src="../JS/listener2.png" alt="Zdarzenia" />
         </SSectionImg>
       </SSection>
 
@@ -218,7 +217,7 @@ const JS = () => {
           Tablice pozwalają przechowywać wiele zmiennych o różnych rodzajach.
         </SSectionContent>
         <SSectionImg>
-          <img src="../JS/tablica.png" alt="Tablica" />
+          <SImg src="../JS/tablica.png" alt="Tablica" />
         </SSectionImg>
       </SSection>
 
@@ -231,7 +230,7 @@ const JS = () => {
           nadać identyfikator (id).
         </SSectionContent>
         <SSectionImg>
-          <img src="../JS/formularz.png" alt="Formularz" />
+          <SImg src="../JS/formularz.png" alt="Formularz" />
         </SSectionImg>
       </SSection>
 
@@ -242,7 +241,7 @@ const JS = () => {
           .innerHTML. Możemy tam dodać tekst, a także znaczniki HTML.
         </SSectionContent>
         <SSectionImg>
-          <img src="../JS/zamianaWnetrza.png" alt="Zamiana wnętrza" />
+          <SImg src="../JS/zamianaWnetrza.png" alt="Zamiana wnętrza" />
         </SSectionImg>
       </SSection>
 
@@ -253,7 +252,7 @@ const JS = () => {
           element.style.nazwaStylu.
         </SSectionContent>
         <SSectionImg>
-          <img src="../JS/zmianaStylu.png" alt="Zmiana Stylu" />
+          <SImg src="../JS/zmianaStylu.png" alt="Zmiana Stylu" />
         </SSectionImg>
       </SSection>
 

@@ -2,36 +2,61 @@ import React, { SyntheticEvent, useContext, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { CurrentLocationContext } from "../context/CurrentLocationContext";
+import { BackendInfo, FrontendInfo } from "../const/ElementsForMenu";
+import LangOption from "../components/LangOption";
+import LangMenu from "../components/LangMenu";
 
 const Home = () => {
-  const [lang, setLang] = useState<string | undefined>(undefined);
-  const [color, setColor] = useState<string>("#EED81C");
-  const { setCurrentLocation } = useContext(CurrentLocationContext);
+  const navigate = useNavigate();
   const [showOptions, setShowOptions] = useState({ 0: false, 1: false });
-  const [alignCheck, setAlignCheck] = useState({ y: 0, x: 0 });
-  const element = <AlignCheck x={alignCheck.x} y={alignCheck.y} />;
 
-  const handleMouseOver = (e: React.MouseEvent, index: number) => {};
+  const handleClick = (url: string) => {
+    navigate(`${url}`);
+  };
 
-  console.log(alignCheck);
+  const FrontendElements = FrontendInfo.map((info, index) => (
+    <LangOption
+      key={info.id}
+      imgSrc={info.src}
+      imgAlt={info.alt}
+      index={index}
+      handleClick={handleClick}
+    />
+  ));
+  const BackendElements = BackendInfo.map((info, index) => (
+    <LangOption
+      key={info.id}
+      imgSrc={info.src}
+      imgAlt={info.alt}
+      index={index}
+      handleClick={handleClick}
+    />
+  ));
+
+  const handleMouseOver = (e: React.MouseEvent, index: number) => {
+    setShowOptions((prevState) => ({
+      ...prevState,
+      [index]: !prevState[index as keyof typeof showOptions],
+    }));
+  };
 
   return (
     <>
       <SHomeContainer>
         <ButtonsContainer>
           <ButtonContainer>
-            {showOptions[0] && element}
+            {showOptions[0] && <LangMenu>{FrontendElements}</LangMenu>}
             <ButtonChoice
-              color="#E34E27"
+              clicked={showOptions[0]}
               onClick={(e) => handleMouseOver(e, 0)}
             >
               Tworzenie stron i aplikacji internetowych
             </ButtonChoice>
           </ButtonContainer>
           <ButtonContainer>
-            {showOptions[1] && element}
+            {showOptions[1] && <LangMenu>{BackendElements}</LangMenu>}
             <ButtonChoice
-              color="#767AB3"
+              clicked={showOptions[1]}
               onClick={(e) => handleMouseOver(e, 1)}
             >
               Tworzenie i administrowanie bazami danych
@@ -45,16 +70,6 @@ const Home = () => {
 
 export default Home;
 
-const AlignCheck = styled.div<{ x: number; y: number }>`
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: red;
-`;
-
 const SHomeContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -63,7 +78,6 @@ const SHomeContainer = styled.div`
   gap: 5rem;
   width: 100%;
   min-height: 100vh;
-  background-color: #222;
 `;
 
 const ButtonsContainer = styled.div`
@@ -79,12 +93,13 @@ const ButtonsContainer = styled.div`
 const ButtonContainer = styled.div`
   width: 80%;
   position: relative;
+  z-index: 5;
 `;
 
-const ButtonChoice = styled.button<{ color: string }>`
-  background-color: transparent;
-  border: 5px solid ${({ color }) => color};
-  color: ${({ color }) => color};
+const ButtonChoice = styled.button<{ clicked: boolean }>`
+  background-color: #087ea4;
+  border: none;
+  color: white;
   padding: 4rem;
   font-size: inherit;
   width: 100%;
@@ -92,4 +107,31 @@ const ButtonChoice = styled.button<{ color: string }>`
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
+  backface-visibility: hidden;
+  transition: transform 0.1s;
+  font-family: inherit;
+  font-weight: 900;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  ${({ clicked }) =>
+    clicked &&
+    `
+    transform:scale(.9); 
+    filter: brightness(0.9);
+  
+    &:hover {
+      filter: brightness(0.85);
+    }
+
+    &:active{
+      transform:scale(.85) ; 
+    }
+    `}
 `;
