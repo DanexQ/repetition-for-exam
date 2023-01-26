@@ -2,8 +2,8 @@ import styled, { keyframes } from "styled-components";
 
 const lolo = (index: number, bottom: boolean) => keyframes`
 0%{
-    top:0;
-    left:0
+    top:0px;
+    left:0px;
 }
 
 100%{
@@ -21,7 +21,31 @@ const lolo = (index: number, bottom: boolean) => keyframes`
 }
 `;
 
-export const Button = styled.button<{ index: number; bottom: boolean }>`
+const hideMe = (index: number, bottom: boolean) => keyframes`
+0%{
+  ${
+    bottom
+      ? `
+      top: 200px;
+      left: ${-150 + index * 300}px;`
+      : `
+    top: -200px;
+    left: ${-200 + index * 200}px;
+  `
+  }
+    
+}
+100%{
+  top:0px;
+  left:0px;
+}
+`;
+
+export const Button = styled.button<{
+  index: number;
+  bottom: boolean;
+  hide: boolean;
+}>`
   padding: 1rem;
   background-color: transparent;
   border: none;
@@ -29,9 +53,10 @@ export const Button = styled.button<{ index: number; bottom: boolean }>`
   height: 10rem;
   width: 15rem;
   position: absolute;
-  animation-name: ${({ index, bottom }) => lolo(index, bottom)};
-  animation-duration: 0.5s;
-  animation-delay: ${({ index }) => 0.25 * index}s;
+  animation-name: ${({ index, bottom, hide }) =>
+    hide ? hideMe(index, bottom) : lolo(index, bottom)};
+  animation-duration: ${({ index, hide }) => (hide ? 0.25 : 0.5)}s;
+  animation-delay: ${({ index, hide }) => (!hide ? 0.25 * index : 0)}s;
   animation-fill-mode: both;
   transform: translate(-50%, -50%);
   z-index: 1;

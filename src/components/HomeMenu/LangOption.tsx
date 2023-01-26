@@ -5,6 +5,7 @@ interface LangOptionProps {
   imgAlt: string;
   index: number;
   handleClick: (url: string) => void;
+  hide: boolean;
 }
 
 const LangOption = ({
@@ -12,9 +13,11 @@ const LangOption = ({
   imgAlt,
   index,
   handleClick,
+  hide,
 }: LangOptionProps) => {
   return (
     <S.Button
+      hide={hide}
       index={index}
       bottom={imgAlt === "MySql" || imgAlt === "PHP"}
       onClick={() => handleClick(imgAlt.toLowerCase())}

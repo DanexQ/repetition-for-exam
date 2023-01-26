@@ -1,10 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-const LangMenu = ({ children }: { children: React.ReactNode }) => {
+interface LangMenu {
+  children: React.ReactNode;
+  handleHideElements: React.AnimationEventHandler<HTMLDivElement>;
+}
+
+const LangMenu = ({ children, handleHideElements }: LangMenu) => {
   return (
     <AlignCheck>
-      <Container>{children}</Container>
+      <Container onAnimationEnd={handleHideElements}>{children}</Container>
     </AlignCheck>
   );
 };
