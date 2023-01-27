@@ -1,3 +1,4 @@
+import { useContext, useEffect } from "react";
 import {
   SContainer,
   SSection,
@@ -7,8 +8,38 @@ import {
   SSpanBold,
   SImg,
 } from "../assets/StyledComponents";
+import Prism from "prismjs";
+import { CurrentLocationContext } from "../context/CurrentLocationContext";
 
 const JS = () => {
+  const { setCurrentLocation } = useContext(CurrentLocationContext);
+  const code = `
+  1     <!DOCTYPE html>
+  2     <html lang="en">
+  3       <head>
+  4         <meta charset="UTF-8" />
+  5         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  6         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  7        <title>Document</title>
+  8       </head>
+  9       <body>
+  10        <script>
+  11          document.write("Prawidłowo podłączony skrypt);      
+  12        </script>
+  13      </body>
+  14   </html>
+  `;
+  const output = Prism.highlight(
+    code,
+    Prism.languages.javascript,
+    "javascript"
+  );
+
+  useEffect(() => {
+    setCurrentLocation("javascript");
+    Prism.highlightAll();
+  }, []);
+
   return (
     <SContainer>
       <SSection>
@@ -31,6 +62,9 @@ const JS = () => {
           odpowiednio podłączyć do dokumentu za pomocą znaczników. Jeżeli chcemy
           pisać skrypt w dokumencie:
         </SSectionContent>
+        <pre>
+          <code className="language-html">{code}</code>
+        </pre>
         <SSectionImg>
           <SImg src="../JS/podlaczeniejs.png" alt="Podłączenie 1" />
         </SSectionImg>

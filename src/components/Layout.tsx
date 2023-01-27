@@ -1,10 +1,13 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import Remember from "./Remember";
 
 const Layout = () => {
+  const topic = useParams();
+  console.log(topic);
+
   return (
     <Prefix>
       <Navbar />

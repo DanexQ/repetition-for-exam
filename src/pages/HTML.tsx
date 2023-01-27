@@ -1,3 +1,4 @@
+import { useContext, useEffect } from "react";
 import {
   SContainer,
   SSection,
@@ -6,8 +7,15 @@ import {
   SSectionTitle,
   SImg,
 } from "../assets/StyledComponents";
+import { CurrentLocationContext } from "../context/CurrentLocationContext";
 
 const HTML = () => {
+  const { setCurrentLocation } = useContext(CurrentLocationContext);
+
+  useEffect(() => {
+    setCurrentLocation("html");
+  }, []);
+
   return (
     <SContainer>
       <SSection>

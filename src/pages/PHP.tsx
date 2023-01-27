@@ -1,3 +1,4 @@
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   SContainer,
@@ -8,8 +9,15 @@ import {
   SSpanBold,
   SImg,
 } from "../assets/StyledComponents";
+import { CurrentLocationContext } from "../context/CurrentLocationContext";
 
 const PHP = () => {
+  const { setCurrentLocation } = useContext(CurrentLocationContext);
+
+  useEffect(() => {
+    setCurrentLocation("php");
+  }, []);
+
   return (
     <SContainer>
       <SSection>

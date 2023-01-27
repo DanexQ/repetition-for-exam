@@ -7,6 +7,7 @@ import { SSpan } from "./NavbarElement";
 
 const Navbar = () => {
   const { currentLocation } = useContext(CurrentLocationContext);
+
   const navbarElements = navbarRawElements
     .filter((el) => el.name !== currentLocation)
     .map((el, index) => (
