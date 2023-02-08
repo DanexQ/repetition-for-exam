@@ -10,30 +10,14 @@ import {
 } from "../assets/StyledComponents";
 import Prism from "prismjs";
 import { CurrentLocationContext } from "../context/CurrentLocationContext";
+import IncludeJsCode from "../components/JavaScript/IncludeJsCode";
+import WhatIsJavaScript from "../components/JavaScript/WhatIsJavaScript";
+import DeclaringVariables from "../components/JavaScript/DeclaringVariables";
+import ConditionalStatements from "../components/JavaScript/ConditionalStatements";
+import PoppingUpModals from "../components/JavaScript/PoppingUpModals";
 
 const JS = () => {
   const { setCurrentLocation } = useContext(CurrentLocationContext);
-  const code = `
-  1     <!DOCTYPE html>
-  2     <html lang="en">
-  3       <head>
-  4         <meta charset="UTF-8" />
-  5         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  6         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  7        <title>Document</title>
-  8       </head>
-  9       <body>
-  10        <script>
-  11          document.write("Prawidłowo podłączony skrypt);      
-  12        </script>
-  13      </body>
-  14   </html>
-  `;
-  const output = Prism.highlight(
-    code,
-    Prism.languages.javascript,
-    "javascript"
-  );
 
   useEffect(() => {
     setCurrentLocation("javascript");
@@ -42,133 +26,11 @@ const JS = () => {
 
   return (
     <SContainer>
-      <SSection>
-        <SSectionTitle>Co to jest JavaScript?</SSectionTitle>
-        <SSectionContent>
-          JavaScript jest językiem skryptowym, najczęściej używany przy
-          tworzeniu stron WWW, zapewniając interaktywność stron oraz obsługę
-          zdarzeń, walidacji formularzy czy budowanie elementów nawigacyjnych.
-          Jest interpretowanym językiem programowania, więc nie musimy go
-          kompilować żeby zobaczyć efekty naszego kodu. Warto zaznaczyć, że
-          JavaScript działa po stronie klienta, a więc nie obciąża w żaden
-          sposób nasz serwer.
-        </SSectionContent>
-      </SSection>
-
-      <SSection>
-        <SSectionTitle>Jak podłączyć skrypt do dokumentu HTML?</SSectionTitle>
-        <SSectionContent>
-          Aby zadziałał nasz skrypt napisany w języku JavaScript, musimy go
-          odpowiednio podłączyć do dokumentu za pomocą znaczników. Jeżeli chcemy
-          pisać skrypt w dokumencie:
-        </SSectionContent>
-        <pre>
-          <code className="language-html">{code}</code>
-        </pre>
-        <SSectionImg>
-          <SImg src="../JS/podlaczeniejs.png" alt="Podłączenie 1" />
-        </SSectionImg>
-        <SSectionContent>
-          Jeżeli chcemy nasz kod pisać w osobnym pliku (na egzaminie odradzam,
-          żeby sobie głowy tym nie zawracać, a w przypadku błędu, żeby nie
-          przeskakiwać z jednego pliku do drugiego, aby sprawdzać co jest nie
-          tak) to musimy go podłączyć w taki sposób:
-        </SSectionContent>
-        <SSectionImg>
-          <SImg src="../JS/podlaczeniejs3.png" alt="Podłączenie 1" />
-        </SSectionImg>
-        <SSectionContent>
-          Atrybut <SSpanBold>src</SSpanBold> wskazuje adres naszego skryptu,
-          który znajduje się w zewnętrznym pliku (nie ma go w dokumencie HTML),
-          dlatego pomiędzy znacznikami nic nie wpisujemy, bo i tak nie zadziała.
-        </SSectionContent>
-      </SSection>
-
-      <SSection>
-        <SSectionTitle>Deklarowanie zmiennych</SSectionTitle>
-        <SSectionContent>
-          Zmienne możemy deklarować na kilka sposobów, które się od siebie
-          różnią funkcjonalnością. Nazywanie zmiennych powinno się odbywać z
-          odpowiednimi zasadami: nie powinna ona zaczynać się od cyfry, nie
-          powinna zawierać spacji, a jeżeli chcemy, aby nazwa była złożona z
-          kilku słów, to używamy znaku podkreślenia zamiast myślnika, albo każde
-          nowe słowo zaczynamy z dużej litery i wszystko zapisujemy jednym
-          ciągiem. Zapamiętaj, że JavaScript rozróżnia wielkość liter i nazwa
-          zmienna nie jest tym samym co ZmienNa.
-        </SSectionContent>
-        <SSectionContent>
-          Deklarowanie zmiennej za pomocą{" "}
-          <SSpanBold>var (ang. skrót od variable - zmienna)</SSpanBold>i{" "}
-          <SSpanBold>let (ang. niech)</SSpanBold> są bardzo podobne i obie mogą
-          zostać modyfikowane w każdym momencie w skrypcie, jednak różnią się
-          “życiem” w blokach i funkcjach, lecz ta wiedza nie jest potrzebna na
-          egzaminie (najlepiej jest używać wszędzie var). Natomiast zmienna{" "}
-          <SSpanBold>const (łac. constans - stały)</SSpanBold> powoduje, że
-          zmienna nie może zostać zmieniona.
-        </SSectionContent>
-        <SSectionContent>
-          Poniżej znajdują się przykłady deklarowania zmiennych wraz z
-          odpowiednimi nazwami::
-        </SSectionContent>
-        <SSectionImg>
-          <SImg src="../JS/zmienne.png" alt="Zmienne" />
-        </SSectionImg>
-      </SSection>
-
-      <SSection>
-        <SSectionTitle>Instrukcje warunkowe</SSectionTitle>
-        <SSectionContent>
-          Instrukcja warunkowa określa, który z fragmentów skryptu zostanie
-          wykonany w zależności od spełnienia określonych warunków. W
-          JavaScripcie instrucją warunkową jest{" "}
-          <SSpanBold>
-            if (ang. jeżeli), a w przypadku nie spełnienia warunku else (ang. w
-            przeciwnym razie).
-          </SSpanBold>{" "}
-          Oczywiście instrukcję możemy przedłużać o kolejne warunki co będzie
-          ukazane w przykładzie:
-        </SSectionContent>
-        <SSectionImg>
-          <SImg src="../JS/if.png" alt="Instrukcja if" />
-        </SSectionImg>
-        <SSectionContent>
-          Szybkie omówienie przykładu: jeżeli cena farby jest mniejsza od 10 i
-          jest dostępna to kupuję, w innym wypadku jeżeli cena jest równa 10 i
-          farba jest dostępna to czekam, aż będzie tańsza, w innym przypadku
-          jeżeli nie jest dostępna to myślę kiedy będzie, a w innym przypadku
-          nie kupuję bo jest za droga.
-        </SSectionContent>
-      </SSection>
-
-      <SSection>
-        <SSectionTitle>
-          Wyskakujące okienka: alert, prompt, confirm
-        </SSectionTitle>
-        <SSectionContent>
-          Rolą alertu jest przekazanie określonej informacji, nie mającej wpływu
-          na działanie skryptu.
-        </SSectionContent>
-        <SSectionImg flex={true}>
-          <SImg src="../JS/alert.png" alt="Alert" />
-          <SImg src="../JS/alertWynik.png" alt="Alert wynik" />
-        </SSectionImg>
-        <SSectionContent>
-          Confirm ukazuje alert z dwoma przyciskami, które zwracają true albo
-          false.
-        </SSectionContent>
-        <SSectionImg flex={true}>
-          <SImg src="../JS/confirm.png" alt="Confirm" />
-          <SImg src="../JS/confirmWynik.png" alt="Confirm wynik" />
-        </SSectionImg>
-        <SSectionContent>
-          Za pomocą prompt można pobierać dane od użytkownika
-        </SSectionContent>
-        <SSectionImg flex={true}>
-          <SImg src="../JS/prompt.png" alt="Prompt" />
-          <SImg src="../JS/promptWynik.png" alt="Prompt wynik" />
-        </SSectionImg>
-      </SSection>
-
+      <WhatIsJavaScript />
+      <IncludeJsCode />
+      <DeclaringVariables />
+      <ConditionalStatements />
+      <PoppingUpModals />
       <SSection id="petle">
         <SSectionTitle>Pętle</SSectionTitle>
         <SSectionContent>

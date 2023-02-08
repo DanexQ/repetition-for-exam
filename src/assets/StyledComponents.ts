@@ -10,9 +10,13 @@ export const SContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 120rem;
+  max-width: 100rem;
   gap: 4rem;
   color: white;
+
+  @media only screen and (max-width: 1100px) {
+    padding: 5rem;
+  }
 `;
 
 export const SSection = styled.section`
@@ -36,26 +40,45 @@ export const SSectionContent = styled.p`
 export const SSectionImg = styled.div<{ flex?: true; big?: true }>`
   display: grid;
   place-items: center;
+  overflow: auto;
+  pre {
+    width: 100%;
+  }
 
   ${({ flex }) =>
     flex &&
     `
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    img{
-      max-width: 90%;
-    }
-  `}
+    gap: 0.5rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
 
-  ${({ big }) =>
-    big &&
-    `
-    img{
-      max-width: 70%;
+    @media only screen and (min-width: 1000px) {
+      grid-template-columns: 3fr 1fr;
+      pre {
+        width: 100%;
+        padding-right: 0;
+      }
     }
   `}
 `;
 
 export const SSpanBold = styled.span`
   font-weight: 700;
+`;
+
+export const ModalButton = styled.span`
+  background-color: #087ea4;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.95);
+  }
+
+  &:active {
+    filter: brightness(0.85);
+  }
 `;
