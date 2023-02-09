@@ -33,32 +33,32 @@ const IncludeJsCode = () => {
   `;
 
   return (
-    <S.SSection>
-      <S.SSectionTitle>Jak podłączyć skrypt do dokumentu HTML?</S.SSectionTitle>
-      <S.SSectionContent>
+    <S.Section id="podlaczanie">
+      <S.SectionTitle>Podłączenie skryptu</S.SectionTitle>
+      <S.SectionContent>
         Aby zadziałał nasz skrypt napisany w języku JavaScript, musimy go
         odpowiednio podłączyć do dokumentu za pomocą znaczników. Jeżeli chcemy
         pisać skrypt w dokumencie:
-      </S.SSectionContent>
-      <S.SSectionImg>
+      </S.SectionContent>
+      <S.SectionImg>
         <pre>
           <code className="language-html">{innerScript}</code>
         </pre>
-      </S.SSectionImg>
-      <S.SSectionContent>
-        Jeżeli chcesz pisać kod w osobnym pliku to musisz podłączyć plik w taki
+      </S.SectionImg>
+      <S.SectionContent>
+        Jeżeli chcesz pisać kod w osobnym pliku to musisz podłączyć go w taki
         sposób:
-      </S.SSectionContent>
-      <S.SSectionImg>
+      </S.SectionContent>
+      <S.SectionImg>
         <pre>
           <code className="language-html">{outerScript}</code>
         </pre>
-      </S.SSectionImg>
-      <S.SSectionContent>
-        Atrybut <S.SSpanBold>src</S.SSpanBold> wskazuje miejsce skryptu w
+      </S.SectionImg>
+      <S.SectionContent>
+        Atrybut <S.SpanBold>src</S.SpanBold> wskazuje miejsce skryptu w
         zewnętrznym pliku.
-      </S.SSectionContent>
-    </S.SSection>
+      </S.SectionContent>
+    </S.Section>
   );
 };
 

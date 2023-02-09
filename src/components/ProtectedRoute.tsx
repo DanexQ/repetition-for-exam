@@ -1,13 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { CurrentLocationContext } from "../context/CurrentLocationContext";
 
-const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-  const { currentLocation } = useContext(CurrentLocationContext);
+const ProtectedRoute = ({ lang }: { lang: string }) => {
+  const { setCurrentLocation } = useContext(CurrentLocationContext);
 
-  return (
-    <>{!currentLocation ? <Navigate to="/" replace={true} /> : children}</>
-  );
+  useEffect(() => {
+    setCurrentLocation(lang);
+  }, []);
+  return <></>;
 };
 
 export default ProtectedRoute;

@@ -5,14 +5,14 @@ const DeclaringVariables = () => {
     <script>
         var zmienna = 1;
         let drugaZmienna = true;
-        const trzecia_zmienna = '3';
+        const trzecia_zmienna = "3";
     </script>
     `;
 
   return (
-    <S.SSection>
-      <S.SSectionTitle>Deklarowanie zmiennych</S.SSectionTitle>
-      <S.SSectionContent>
+    <S.Section id="deklarowanieZmiennych">
+      <S.SectionTitle>Deklarowanie zmiennych</S.SectionTitle>
+      <S.SectionContent>
         Zmienne możemy deklarować na kilka sposobów, które się od siebie różnią
         funkcjonalnością. Nazywanie zmiennych powinno się odbywać z odpowiednimi
         zasadami: nie powinna ona zaczynać się od cyfry, nie powinna zawierać
@@ -21,25 +21,25 @@ const DeclaringVariables = () => {
         dużej litery i wszystko zapisujemy jednym ciągiem. Zapamiętaj, że
         JavaScript rozróżnia wielkość liter i nazwa zmienna nie jest tym samym
         co ZmienNa.
-      </S.SSectionContent>
-      <S.SSectionContent>
+      </S.SectionContent>
+      <S.SectionContent>
         Deklarowanie zmiennej za pomocą{" "}
-        <S.SSpanBold>var (ang. skrót od variable - zmienna)</S.SSpanBold>i{" "}
-        <S.SSpanBold>let (ang. niech)</S.SSpanBold> są bardzo podobne i obie
-        mogą zostać modyfikowane w każdym momencie w skrypcie, jednak różnią się
+        <S.SpanBold>var (ang. skrót od variable - zmienna)</S.SpanBold>i{" "}
+        <S.SpanBold>let (ang. niech)</S.SpanBold> są bardzo podobne i obie mogą
+        zostać modyfikowane w każdym momencie w skrypcie, jednak różnią się
         “życiem” w blokach i funkcjach, lecz ta wiedza nie jest potrzebna na
         egzaminie (najlepiej jest używać wszędzie var). Natomiast zmienna{" "}
-        <S.SSpanBold>const (łac. constans - stały)</S.SSpanBold> powoduje, że
+        <S.SpanBold>const (łac. constans - stały)</S.SpanBold> powoduje, że
         zmienna nie może zostać zmieniona.
-      </S.SSectionContent>
-      <S.SSectionContent>
+      </S.SectionContent>
+      <S.SectionContent>
         Poniżej znajdują się przykłady deklarowania zmiennych wraz z
         odpowiednimi nazwami::
-      </S.SSectionContent>
+      </S.SectionContent>
       <pre>
         <code className="language-html">{code}</code>
       </pre>
-    </S.SSection>
+    </S.Section>
   );
 };
 

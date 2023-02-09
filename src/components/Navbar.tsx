@@ -4,22 +4,27 @@ import { CurrentLocationContext } from "../context/CurrentLocationContext";
 import { navbarRawElements } from "../const/ElementsForNavbar";
 import NavbarElement from "./NavbarElement";
 import { SSpan } from "./NavbarElement";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const { currentLocation } = useContext(CurrentLocationContext);
+  const { currentLocation, currentLocationColor } = useContext(
+    CurrentLocationContext
+  );
+  const navigate = useNavigate();
 
   const navbarElements = navbarRawElements
     .filter((el) => el.name !== currentLocation)
     .map((el, index) => (
       <NavbarElement key={index} name={el.name} color={el.color} />
     ));
-  const currentLocationColor =
-    currentLocation &&
-    navbarRawElements.filter((el) => el.name === currentLocation)[0].color;
+
+  const handleTopicHome = () => {
+    navigate(`${currentLocation}/wszystko`);
+  };
 
   return (
     <SNavbarContainer>
-      <SCurrentLocation color={currentLocationColor}>
+      <SCurrentLocation color={currentLocationColor} onClick={handleTopicHome}>
         {currentLocation.toUpperCase()}
       </SCurrentLocation>
       <SNavbarMenu>{navbarElements}</SNavbarMenu>

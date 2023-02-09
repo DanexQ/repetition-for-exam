@@ -9,7 +9,7 @@ const NavbarElement = ({ name, color }: { name: string; color: string }) => {
 
   const handleNavigate = () => {
     setCurrentLocation(name);
-    navigate(`${name}`);
+    navigate(`${name}/wszystko`);
   };
 
   return (

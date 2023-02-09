@@ -1,43 +1,43 @@
 import styled from "styled-components";
 
-export const SImg = styled.img`
+export const Img = styled.img`
   max-width: 50%;
   border-radius: 1rem;
 `;
 
-export const SContainer = styled.div`
+export const EntireTopicContainer = styled.div``;
+
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 100rem;
   gap: 4rem;
-  color: white;
 
   @media only screen and (max-width: 1100px) {
     padding: 5rem;
   }
 `;
 
-export const SSection = styled.section`
+export const Section = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   width: 100%;
+  max-width: 100rem;
+  gap: 2rem;
+  color: white;
 `;
 
-export const SSectionTitle = styled.h2`
+export const SectionTitle = styled.h2`
   font-size: 5rem;
-  font-weight: 500;
+  font-weight: 600;
 `;
 
-export const SSectionContent = styled.p`
+export const SectionContent = styled.p`
   font-size: 2.3rem;
   font-weight: 300;
   text-align: justify;
 `;
 
-export const SSectionImg = styled.div<{ flex?: true; big?: true }>`
+export const SectionImg = styled.div<{ flex?: true; big?: true }>`
   display: grid;
   place-items: center;
   overflow: auto;
@@ -62,7 +62,7 @@ export const SSectionImg = styled.div<{ flex?: true; big?: true }>`
   `}
 `;
 
-export const SSpanBold = styled.span`
+export const SpanBold = styled.span`
   font-weight: 700;
 `;
 
