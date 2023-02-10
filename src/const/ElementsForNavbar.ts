@@ -22,6 +22,16 @@ export const navbarRawElements = [
 ];
 
 export const topicNavbarLinks = {
+  php: [
+    { path: "coToJestPHP", title: "Co to jest PHP?" },
+    { path: "podlaczanie", title: "Połączanie PHP" },
+    { path: "zmienne", title: "Deklarowanie zmiennych" },
+    { path: "instrukcjeWarunkowe", title: "Instrukcje warunkowe" },
+    { path: "baza", title: "Praca z bazą danych" },
+    { path: "formularze", title: "Praca z formularzami" },
+    { path: "cookies", title: "Praca z cookies" },
+    { path: "session", title: "Praca z sesjami" },
+  ],
   javascript: [
     { path: "coToJestJavaScript", title: "Co to jest JavaScript?" },
     { path: "podlaczanie", title: "Podłączenie skryptu" },

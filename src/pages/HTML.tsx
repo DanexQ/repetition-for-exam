@@ -29,9 +29,9 @@ const HTML = () => {
           polski (pl-PL). Te dwie rzeczy są naprawdę ważne, bo są łatwe, a jak
           ich nie zrobimy to tracimy głupie punkty.
         </S.SectionContent>
-        <S.SectionImg>
+        <S.SectionCode>
           <S.Img src="../HTML/strukturaHTML.png" alt="HTML" />
-        </S.SectionImg>
+        </S.SectionCode>
       </S.Section>
       <S.Section>
         <S.SectionTitle>Późniejsza struktura dokumentu</S.SectionTitle>
@@ -41,9 +41,9 @@ const HTML = () => {
           tego używaj podanych znaczników, których warto się nauczyć sekcji
           (jeżeli o nich zapomnimy to divy są jedynym wyjściem):
         </S.SectionContent>
-        <S.SectionImg>
+        <S.SectionCode>
           <S.Img src="../HTML/strukturaHTML2.png" alt="HTML2" />
-        </S.SectionImg>
+        </S.SectionCode>
       </S.Section>
       <S.Section>
         <S.SectionTitle>Zapamiętaj!</S.SectionTitle>

@@ -1,24 +1,25 @@
 import * as S from "../../assets/StyledComponents";
+import { useHighlight } from "../../Hooks/useHighlight";
 
 const IncludeJsCode = () => {
-  const innerScript = `
-  <!DOCTYPE html>
+  const highlight = useHighlight();
+  highlight();
+  const innerScript = ` <!DOCTYPE html>
   <html lang="pl-PL">
     <head>
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-     <title>Document</title>
+      <title>Document</title>
     </head>
     <body>
       <script>
         document.write("Prawidłowo podłączony skrypt);      
       </script>
     </body>
-  </html>
-  `;
-  const outerScript = `
-  <!DOCTYPE html>
+  </html>`;
+
+  const outerScript = ` <!DOCTYPE html>
   <html lang="pl-PL">
     <head>
       <meta charset="UTF-8" />
@@ -29,31 +30,31 @@ const IncludeJsCode = () => {
     <body>
       <script src="skrypt.js"></script>
     </body>
-  </html>
-  `;
+  </html>`;
 
   return (
     <S.Section id="podlaczanie">
       <S.SectionTitle>Podłączenie skryptu</S.SectionTitle>
       <S.SectionContent>
-        Aby zadziałał nasz skrypt napisany w języku JavaScript, musimy go
-        odpowiednio podłączyć do dokumentu za pomocą znaczników. Jeżeli chcemy
-        pisać skrypt w dokumencie:
+        Skrypt napisany w języku JavaScript, musi być odpowiednio podłączony do
+        dokumentu za pomocą znaczników{" "}
+        <S.SpanBold>{`<script></script>`}</S.SpanBold>. Skrypt podłączysz na dwa
+        sposoby w zależności gdzie chcesz go napisać. Jeżeli chcesz pisać skrypt
+        w dokumencie:
       </S.SectionContent>
-      <S.SectionImg>
+      <S.SectionCode>
         <pre>
           <code className="language-html">{innerScript}</code>
         </pre>
-      </S.SectionImg>
+      </S.SectionCode>
       <S.SectionContent>
-        Jeżeli chcesz pisać kod w osobnym pliku to musisz podłączyć go w taki
-        sposób:
+        Jeżeli chcesz pisać kod w osobnym pliku:
       </S.SectionContent>
-      <S.SectionImg>
+      <S.SectionCode>
         <pre>
           <code className="language-html">{outerScript}</code>
         </pre>
-      </S.SectionImg>
+      </S.SectionCode>
       <S.SectionContent>
         Atrybut <S.SpanBold>src</S.SpanBold> wskazuje miejsce skryptu w
         zewnętrznym pliku.

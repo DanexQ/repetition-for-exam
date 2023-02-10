@@ -1,30 +1,24 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import { CurrentLocationContext } from "../context/CurrentLocationContext";
-import { navbarRawElements } from "../const/ElementsForNavbar";
-import NavbarElement from "./NavbarElement";
-import { SSpan } from "./NavbarElement";
-import { useNavigate } from "react-router-dom";
+import { CurrentLocationContext } from "../../context/CurrentLocationContext";
+import { navbarRawElements } from "../../const/ElementsForNavbar";
+import NavbarMainElement from "./NavbarMainElement";
+import { SSpan } from "./NavbarMainElement";
 
-const Navbar = () => {
+const NavbarMain = () => {
   const { currentLocation, currentLocationColor } = useContext(
     CurrentLocationContext
   );
-  const navigate = useNavigate();
 
   const navbarElements = navbarRawElements
     .filter((el) => el.name !== currentLocation)
     .map((el, index) => (
-      <NavbarElement key={index} name={el.name} color={el.color} />
+      <NavbarMainElement key={index} name={el.name} color={el.color} />
     ));
-
-  const handleTopicHome = () => {
-    navigate(`${currentLocation}/wszystko`);
-  };
 
   return (
     <SNavbarContainer>
-      <SCurrentLocation color={currentLocationColor} onClick={handleTopicHome}>
+      <SCurrentLocation to={currentLocation} color={currentLocationColor}>
         {currentLocation.toUpperCase()}
       </SCurrentLocation>
       <SNavbarMenu>{navbarElements}</SNavbarMenu>
@@ -32,7 +26,7 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarMain;
 
 const SNavbarContainer = styled.div`
   display: flex;
@@ -41,21 +35,27 @@ const SNavbarContainer = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 1rem;
-  padding: 5rem 0;
   margin: 0 auto;
 `;
 
 const SNavbarMenu = styled.div`
+  position: sticky;
   display: flex;
   justify-content: center;
-  gap: 4rem;
+  gap: 3rem;
+  width: 100%;
+  flex-wrap: wrap;
 `;
 
 const SCurrentLocation = styled(SSpan)`
-  font-size: 10rem;
+  font-size: 7rem;
   font-weight: 800;
 
   &:hover {
     font-weight: 800;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 6rem;
   }
 `;

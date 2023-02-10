@@ -14,9 +14,6 @@ import Events from "../components/JavaScript/Events";
 import FormHandling from "../components/JavaScript/FormHandling";
 import ChangeContent from "../components/JavaScript/ChangeContent";
 import ChangeStyle from "../components/JavaScript/ChangeStyle";
-import TopicNavigate from "../components/JavaScript/TopicNav/TopicNavigate";
-import { LinkItem } from "../components/JavaScript/TopicNav/TopicNavStyled";
-LinkItem;
 
 const JS = () => {
   const { setCurrentLocation } = useContext(CurrentLocationContext);

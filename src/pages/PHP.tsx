@@ -26,9 +26,9 @@ const PHP = () => {
           Tak samo jak JavaScript musimy podłączyć PHP do dokumentu za pomocą
           znaczników {"<?php ?>"}
         </S.SectionContent>
-        <S.SectionImg>
+        <S.SectionCode>
           <S.Img src="../PHP/podlaczenie.png" alt="Podłączenie" />
-        </S.SectionImg>
+        </S.SectionCode>
       </S.Section>
       <S.Section>
         <S.SectionTitle>Deklarowanie zmiennych i wypisywanie</S.SectionTitle>
@@ -41,9 +41,9 @@ const PHP = () => {
           do wyświetlanego tekstu np. wartość zmiennej to musisz użyć operatora
           łączenia tekstu <S.SpanBold>.</S.SpanBold> (po prostu kropka).
         </S.SectionContent>
-        <S.SectionImg>
+        <S.SectionCode>
           <S.Img src="../PHP/zmienne.png" alt="zmienne" />
-        </S.SectionImg>
+        </S.SectionCode>
       </S.Section>
       <S.Section>
         <S.SectionTitle>Instrukcje warunkowe</S.SectionTitle>
@@ -55,9 +55,9 @@ const PHP = () => {
           instrukcję możemy przedłużać o kolejne warunki za pomocą elseif().
           Operatory logiczne są identyczne jak w JS (==, &&, ||).
         </S.SectionContent>
-        <S.SectionImg>
+        <S.SectionCode>
           <S.Img src="../PHP/if.png" alt="Instrukcja if" />
-        </S.SectionImg>
+        </S.SectionCode>
       </S.Section>
       <S.Section>
         <S.SectionTitle>Praca z bazą danych</S.SectionTitle>
@@ -69,9 +69,9 @@ const PHP = () => {
           wynik), pobranie za pomocą pętli wierszy z wyniku, wyświetlenie kolumn
           i zakończenie połączenia z bazą.
         </S.SectionContent>
-        <S.SectionImg big={true}>
+        <S.SectionCode big={true}>
           <S.Img src="../PHP/schemat.png" alt="Schemat" />
-        </S.SectionImg>
+        </S.SectionCode>
         <S.SectionContent>
           Powyżej znajduje się przykład poprawnego skryptu, pobierającego i
           wyświetlającego dane z bazy na stronie.
@@ -91,9 +91,9 @@ const PHP = () => {
           dobrze zrobione. Sprawdzamy czy $_POST['name_inputa'] został
           ustawiony(isset()) i czy nie jest pusty(!empty()).
         </S.SectionContent>
-        <S.SectionImg big={true}>
+        <S.SectionCode big={true}>
           <S.Img src="../PHP/formularze.png" alt="Schemat" />
-        </S.SectionImg>
+        </S.SectionCode>
         <S.SectionContent>
           Powyżej jest przykład poprawnego skryptu, który pobiera dane z
           formularza i wysyła je do bazy. Zauważ w jaki sposób zmienna{" "}
@@ -111,9 +111,9 @@ const PHP = () => {
           Warto jest pracować z ciasteczkami na samym początku dokumentu (po{" "}
           {"<!DOCTYPE>"}).
         </S.SectionContent>
-        <S.SectionImg>
+        <S.SectionCode>
           <S.Img src="../PHP/cookies.png" alt="Cookies" />
-        </S.SectionImg>
+        </S.SectionCode>
       </S.Section>
     </S.Container>
   );

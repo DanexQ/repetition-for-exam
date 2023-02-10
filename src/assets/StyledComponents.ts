@@ -11,10 +11,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4rem;
-
-  @media only screen and (max-width: 1100px) {
-    padding: 5rem;
-  }
 `;
 
 export const Section = styled.section`
@@ -23,21 +19,20 @@ export const Section = styled.section`
   width: 100%;
   max-width: 100rem;
   gap: 2rem;
-  color: white;
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 5rem;
+  font-size: 3.2rem;
   font-weight: 600;
 `;
 
 export const SectionContent = styled.p`
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: 300;
   text-align: justify;
 `;
 
-export const SectionImg = styled.div<{ flex?: true; big?: true }>`
+export const SectionCode = styled.div<{ flex?: true; big?: true }>`
   display: grid;
   place-items: center;
   overflow: auto;
@@ -52,7 +47,7 @@ export const SectionImg = styled.div<{ flex?: true; big?: true }>`
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
 
-    @media only screen and (min-width: 1000px) {
+    @media only screen and (min-width: 1100px) {
       grid-template-columns: 3fr 1fr;
       pre {
         width: 100%;
@@ -73,6 +68,7 @@ export const ModalButton = styled.span`
   border-radius: 1rem;
   font-weight: 600;
   cursor: pointer;
+  text-align: center;
 
   &:hover {
     filter: brightness(0.95);

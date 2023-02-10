@@ -16,13 +16,33 @@ html {
   scroll-behavior: smooth;
 }
 
+@media only screen and (max-width: 1100px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 40%;
+  }
+}
+
 body {
   font-family: "Lato";
+  color: #e5e5e5;
 }
 
 pre {
   border-radius: 1rem;
-  padding-right: 5rem;
+  padding: 2rem !important;
+  background-color: #222 !important;
 }
 
 pre code {
