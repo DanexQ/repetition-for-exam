@@ -1,5 +1,8 @@
+import Prism from "prismjs";
 import { useContext, useEffect } from "react";
 import * as S from "../assets/StyledComponents";
+import IncludePHPCode from "../components/PHP/IncludePHPCode";
+import WhatIsPHP from "../components/PHP/WhatIsPHP";
 import { CurrentLocationContext } from "../context/CurrentLocationContext";
 
 const PHP = () => {
@@ -7,29 +10,13 @@ const PHP = () => {
 
   useEffect(() => {
     setCurrentLocation("php");
+    Prism.highlightAll();
   }, []);
 
   return (
     <S.Container>
-      <S.Section>
-        <S.SectionTitle>Co to jest PHP?</S.SectionTitle>
-        <S.SectionContent>
-          PHP to interpretowany, skryptowy język programowania zaprojektowany do
-          generowania stron internetowych i budowania aplikacji webowych w
-          czasie rzeczywistym. PHP jest najczęściej stosowany do tworzenia
-          skryptów po stronie serwera WWW.
-        </S.SectionContent>
-      </S.Section>
-      <S.Section>
-        <S.SectionTitle>PHP w dokumencie</S.SectionTitle>
-        <S.SectionContent>
-          Tak samo jak JavaScript musimy podłączyć PHP do dokumentu za pomocą
-          znaczników {"<?php ?>"}
-        </S.SectionContent>
-        <S.SectionCode>
-          <S.Img src="../PHP/podlaczenie.png" alt="Podłączenie" />
-        </S.SectionCode>
-      </S.Section>
+      <WhatIsPHP />
+      <IncludePHPCode />
       <S.Section>
         <S.SectionTitle>Deklarowanie zmiennych i wypisywanie</S.SectionTitle>
         <S.SectionContent>

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
-@import url("../node_modules/prismjs/themes/prism-tomorrow.min.css");
+@import url("../node_modules/prismjs/themes/prism-tomorrow.css");
 
 *,
 *::after,
