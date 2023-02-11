@@ -23,8 +23,8 @@ export const navbarRawElements = [
 
 export const topicNavbarLinks = {
   php: [
-    { path: "coToJestPHP", title: "Co to jest PHP?" },
-    { path: "podlaczanie", title: "Połączanie PHP" },
+    { path: "coto", title: "Co to jest PHP?" },
+    { path: "podlaczanie", title: "Podłączanie PHP" },
     { path: "zmienne", title: "Deklarowanie zmiennych" },
     { path: "instrukcjeWarunkowe", title: "Instrukcje warunkowe" },
     { path: "baza", title: "Praca z bazą danych" },

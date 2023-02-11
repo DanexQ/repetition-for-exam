@@ -1,8 +1,10 @@
-import Prism from "prismjs";
-import { useEffect } from "react";
 import * as S from "../../assets/StyledComponents";
+import { useHighlight } from "../../Hooks/useHighlight";
 
 const IncludePHPCode = () => {
+  const highlight = useHighlight();
+  highlight();
+
   const phpCode = `  <!DOCTYPE html>
   <html lang="pl-PL">
     <head>
@@ -13,21 +15,19 @@ const IncludePHPCode = () => {
     </head>
     <body>
       <?php 
-        // kod php
+      // kod php
+        $zmienna = 1;
       /?>
       <section id="baner">Tytuł strony</section>
       <?php 
-        // następny kod php
+      // następny kod php
+        echo zmienna;
       /?>
     </body>
   </html>`;
 
-  useEffect(() => {
-    Prism.highlightAll();
-  }, []);
-
   return (
-    <S.Section>
+    <S.Section id="podlaczanie">
       <S.SectionTitle>PHP w dokumencie</S.SectionTitle>
       <S.SectionContent>
         Muszą być spełnione dwa warunki, aby mógł zadziałać kod PHP.

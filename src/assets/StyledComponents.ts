@@ -58,7 +58,7 @@ export const SectionCode = styled.div<{ flex?: true; big?: true }>`
 `;
 
 export const SpanBold = styled.span`
-  font-weight: 700;
+  font-weight: 600;
 `;
 
 export const ModalButton = styled.span`
