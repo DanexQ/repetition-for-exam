@@ -49,4 +49,10 @@ export const topicNavbarLinks = {
     { path: "zmianaWnetrza", title: "Zmiana wnętrza elementów" },
     { path: "zmianaStylu", title: "Zmiana stylu elementów" },
   ],
+  html: [
+    { path: "cotojesthtml", title: "Co to jest HTML?" },
+    { path: "strukturadokumentu", title: "Struktura dokumentu" },
+    { path: "strukturastrony", title: "Struktura strony" },
+    { path: "najwazniejsze", title: "Najważniejsze znaczniki" },
+  ],
 };

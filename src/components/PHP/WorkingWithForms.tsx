@@ -6,20 +6,20 @@ const WorkingWithForms = () => {
   highlight();
 
   const formsCode = ` <body>
-<form action="" method="POST">
+  <form action="" method="POST">
     <input type="text" name="nazwisko"></br>
     <button type="submit">Wyślij</button>
     <?php 
-    $polaczenie = mysqli_connect('localhost', 'root', '', 'nazwa_bazy');
+      $polaczenie = mysqli_connect('localhost', 'root', '', 'nazwa_bazy');
 
-    if(isset($_POST['nazwisko']) && !isempty($_POST['nazwisko']){
-      $nazwisko = $_POST['nazwisko'];
-      $kwerenda = "INSERT INTO 'nazwa_tabeli' ('id','nazwisko') VALUES (NULL,'".$nazwisko."');";
-      mysqli_query($polaczenie, $kwerenda);
-    }
-    mysqli_close($polaczenie);
+      if(isset($_POST['nazwisko']) && !isempty($_POST['nazwisko']){
+        $nazwisko = $_POST['nazwisko'];
+        $kwerenda = "INSERT INTO 'nazwa_tabeli' ('id','nazwisko') VALUES (NULL,'".$nazwisko."');";
+        mysqli_query($polaczenie, $kwerenda);
+      }
+      mysqli_close($polaczenie);
     ?>
-</form>
+  </form>
 </body>`;
 
   return (
