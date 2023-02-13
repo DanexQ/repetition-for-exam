@@ -31,6 +31,7 @@ export const topicNavbarLinks = {
     { path: "formularze", title: "Praca z formularzami" },
     { path: "cookies", title: "Praca z cookies" },
     { path: "session", title: "Praca z sesjami" },
+    { path: "pracawpliku", title: "Praca w pliku PHP" },
   ],
   javascript: [
     { path: "coToJestJavaScript", title: "Co to jest JavaScript?" },
@@ -54,5 +55,11 @@ export const topicNavbarLinks = {
     { path: "strukturadokumentu", title: "Struktura dokumentu" },
     { path: "strukturastrony", title: "Struktura strony" },
     { path: "najwazniejsze", title: "Najważniejsze znaczniki" },
+  ],
+  css: [
+    { path: "cotojestcss", title: "Co to jest CSS?" },
+    { path: "podlaczenie", title: "Podłączenie CSS do strony" },
+    { path: "selektory", title: "Selektory" },
+    { path: "najpopularniejsze", title: "Najpopularniejsze właściwości" },
   ],
 };

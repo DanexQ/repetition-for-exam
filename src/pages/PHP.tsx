@@ -8,6 +8,7 @@ import WhatIsPHP from "../components/PHP/WhatIsPHP";
 import WorkingWithCookies from "../components/PHP/WorkingWithCookies";
 import WorkingWithDB from "../components/PHP/WorkingWithDB";
 import WorkingWithForms from "../components/PHP/WorkingWithForms";
+import WorkingWithPHPFile from "../components/PHP/WorkingWithPHPFile";
 import WorkingWithSessions from "../components/PHP/WorkingWithSessions";
 import { CurrentLocationContext } from "../context/CurrentLocationContext";
 
@@ -29,6 +30,7 @@ const PHP = () => {
       <WorkingWithForms />
       <WorkingWithCookies />
       <WorkingWithSessions />
+      <WorkingWithPHPFile />
     </S.Container>
   );
 };
