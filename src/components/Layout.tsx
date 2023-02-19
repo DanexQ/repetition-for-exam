@@ -3,10 +3,12 @@ import styled from "styled-components";
 import TopicNavigate from "./NavbarSub/NavbarSub";
 import Navbar from "./NavbarMain/NavbarMain";
 import Footer from "./Footer";
+import { NavbarSubContainer } from "./NavbarSub/NavbarSubStyled";
 
 const Layout = () => {
   return (
     <Prefix>
+      <SShowNavbarSub />
       <TopicNavigate />
       <MiddleContainer>
         <Navbar />
@@ -33,8 +35,10 @@ const Prefix = styled.div`
   }
 
   @media only screen and (max-width: 1100px) {
-    gap: 2rem;
     grid-template-columns: 1fr;
+    & > ${NavbarSubContainer} {
+      display: none;
+    }
   }
 `;
 
@@ -42,10 +46,36 @@ const MiddleContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 6rem;
-  padding: 3rem 0;
+  padding-bottom: 3rem;
   align-items: center;
+`;
 
-  @media only screen and (max-width: 1100px) {
-    padding: 3rem;
+const SShowNavbarSub = styled.button`
+  position: fixed;
+  top: 4.5rem;
+  right: 3rem;
+  width: 30px;
+  height: 2px;
+  border: none;
+  background-color: white;
+  z-index: 101;
+  transform: translateY(-50%);
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+  }
+
+  &::after {
+    position: absolute;
+    top: 7px;
+  }
+  &::before {
+    position: absolute;
+    bottom: 7px;
   }
 `;

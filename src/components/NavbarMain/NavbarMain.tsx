@@ -4,6 +4,8 @@ import { CurrentLocationContext } from "../../context/CurrentLocationContext";
 import { navbarRawElements } from "../../const/ElementsForNavbar";
 import NavbarMainElement from "./NavbarMainElement";
 import { SSpan } from "./NavbarMainElement";
+import TopicNavigate from "../NavbarSub/NavbarSub";
+import { NavbarSubContainer } from "../NavbarSub/NavbarSubStyled";
 
 const NavbarMain = () => {
   const { currentLocation, currentLocationColor } = useContext(
@@ -22,6 +24,7 @@ const NavbarMain = () => {
         {currentLocation.toUpperCase()}
       </SCurrentLocation>
       <SNavbarMenu>{navbarElements}</SNavbarMenu>
+      <TopicNavigate />
     </SNavbarContainer>
   );
 };
@@ -29,17 +32,36 @@ const NavbarMain = () => {
 export default NavbarMain;
 
 const SNavbarContainer = styled.div`
+  padding: 2rem 0;
   display: flex;
-  align-self: flex-start;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 1rem;
-  margin: 0 auto;
+
+  @media only screen and (max-width: 1100px) {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background-color: #171717;
+
+    ${NavbarSubContainer} {
+      display: block;
+      height: 100vh;
+    }
+  }
+
+  @media only screen and (min-width: 1100px) {
+    ${NavbarSubContainer} {
+      display: none;
+    }
+  }
 `;
 
 const SNavbarMenu = styled.div`
-  position: sticky;
   display: flex;
   justify-content: center;
   gap: 3rem;
@@ -55,7 +77,7 @@ const SCurrentLocation = styled(SSpan)`
     font-weight: 800;
   }
 
-  @media only screen and (max-width: 600px) {
-    font-size: 6rem;
+  @media only screen and (max-width: 1100px) {
+    font-size: 4rem;
   }
 `;

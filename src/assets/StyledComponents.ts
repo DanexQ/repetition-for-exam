@@ -5,12 +5,14 @@ export const Img = styled.img`
   border-radius: 1rem;
 `;
 
-export const EntireTopicContainer = styled.div``;
-
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4rem;
+
+  @media only screen and (max-width: 1100px) {
+    padding: 0 3rem;
+  }
 `;
 
 export const Section = styled.section`

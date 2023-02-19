@@ -7,7 +7,6 @@ import {
 } from "react";
 import { topicNavbarLinks } from "../../const/ElementsForNavbar";
 import { CurrentLocationContext } from "../../context/CurrentLocationContext";
-import useGetHashLocation from "../../Hooks/useGetHashLocation";
 import NavbarSubItem from "./NavbarSubItem";
 import * as S from "./NavbarSubStyled";
 

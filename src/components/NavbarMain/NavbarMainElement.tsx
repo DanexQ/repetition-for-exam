@@ -38,7 +38,7 @@ export const SSpan = styled(Link)<{ color: string }>`
     transform: scale(1.05);
   }
 
-  @media only screen and (max-width: 600px) {
-    font-size: 4rem;
+  @media only screen and (max-width: 1100px) {
+    font-size: 3rem;
   }
 `;
