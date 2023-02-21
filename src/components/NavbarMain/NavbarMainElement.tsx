@@ -1,7 +1,6 @@
-import styled from "styled-components";
 import { CurrentLocationContext } from "../../context/CurrentLocationContext";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { SSpan } from "./NavbarMainStyled";
 
 const NavbarMainElement = ({
   name,
@@ -24,21 +23,3 @@ const NavbarMainElement = ({
 };
 
 export default NavbarMainElement;
-
-export const SSpan = styled(Link)<{ color: string }>`
-  ${({ color }) => `color: ${color};`}
-  font-size: 5rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s;
-  backface-visibility: none;
-  text-decoration: none;
-
-  :hover {
-    transform: scale(1.05);
-  }
-
-  @media only screen and (max-width: 1100px) {
-    font-size: 3rem;
-  }
-`;

@@ -14,7 +14,7 @@ const lolo = (index: number, bottom: boolean) => keyframes`
       left: ${-150 + index * 300}px;`
       : `
     top: -200px;
-    left: ${-200 + index * 200}px;
+    left: ${-300 + index * 200}px;
   `
   }
     
@@ -30,7 +30,7 @@ const hideMe = (index: number, bottom: boolean) => keyframes`
       left: ${-150 + index * 300}px;`
       : `
     top: -200px;
-    left: ${-200 + index * 200}px;
+    left: ${-300 + index * 200}px;
   `
   }
     

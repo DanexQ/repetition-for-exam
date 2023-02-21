@@ -1,16 +1,16 @@
-import {
-  useContext,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import { SetStateAction, useContext } from "react";
 import { topicNavbarLinks } from "../../const/ElementsForNavbar";
 import { CurrentLocationContext } from "../../context/CurrentLocationContext";
 import NavbarSubItem from "./NavbarSubItem";
 import * as S from "./NavbarSubStyled";
+import React from "react";
 
-const TopicNavigate = () => {
+interface NavbarSubProps {
+  show?: boolean;
+  setShowMobileMenu: React.Dispatch<SetStateAction<boolean>>;
+}
+
+const TopicNavigate = ({ show, setShowMobileMenu }: NavbarSubProps) => {
   const { currentLocation, currentLocationColor, hashLocation } = useContext(
     CurrentLocationContext
   );
@@ -22,9 +22,13 @@ const TopicNavigate = () => {
     <NavbarSubItem key={path} title={title} path={path} hash={hashLocation} />
   ));
 
+  const handleOnClick = () => {
+    if (show) setShowMobileMenu(false);
+  };
+
   return (
-    <S.NavbarSubContainer>
-      <S.NavbarSubList>
+    <S.NavbarSubContainer show={show}>
+      <S.NavbarSubList onClick={handleOnClick}>
         <S.NavbarSubTopic
           href="#"
           isActive={window.location.hash === ""}

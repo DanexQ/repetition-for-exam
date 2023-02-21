@@ -14,14 +14,15 @@ export const FrontendInfo = [
     src: "../Icons/css.svg",
     alt: "CSS",
   },
-];
-
-export const BackendInfo = [
   {
     id: "969a4476-9ce7-11ed-a8fc-0242ac120002",
     src: "../Icons/php.svg",
     alt: "PHP",
   },
+];
+
+export const BackendInfo = [
+
   {
     id: "969a4926-9ce7-11ed-a8fc-0242ac120002",
     src: "../Icons/mysql.svg",

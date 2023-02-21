@@ -8,7 +8,6 @@ import { NavbarSubContainer } from "./NavbarSub/NavbarSubStyled";
 const Layout = () => {
   return (
     <Prefix>
-      <SShowNavbarSub />
       <TopicNavigate />
       <MiddleContainer>
         <Navbar />
@@ -48,34 +47,4 @@ const MiddleContainer = styled.div`
   gap: 6rem;
   padding-bottom: 3rem;
   align-items: center;
-`;
-
-const SShowNavbarSub = styled.button`
-  position: fixed;
-  top: 4.5rem;
-  right: 3rem;
-  width: 30px;
-  height: 2px;
-  border: none;
-  background-color: white;
-  z-index: 101;
-  transform: translateY(-50%);
-
-  &::after,
-  &::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: inherit;
-  }
-
-  &::after {
-    position: absolute;
-    top: 7px;
-  }
-  &::before {
-    position: absolute;
-    bottom: 7px;
-  }
 `;

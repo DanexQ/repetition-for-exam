@@ -8,7 +8,7 @@ export const Img = styled.img`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
 
   @media only screen and (max-width: 1100px) {
     padding: 0 3rem;
@@ -21,6 +21,7 @@ export const Section = styled.section`
   width: 100%;
   max-width: 100rem;
   gap: 2rem;
+  padding: 1rem 0;
 `;
 
 export const SectionTitle = styled.h2`
@@ -38,6 +39,7 @@ export const SectionCode = styled.div<{ flex?: true; big?: true }>`
   display: grid;
   place-items: center;
   overflow: auto;
+
   pre {
     width: 100%;
   }

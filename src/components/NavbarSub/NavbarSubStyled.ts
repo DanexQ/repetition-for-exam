@@ -1,16 +1,21 @@
 import styled from "styled-components";
 
-export const NavbarSubContainer = styled.div`
+export const NavbarSubContainer = styled.div<{ show?: boolean }>`
   display: flex;
   flex-direction: column;
 
   @media only screen and (max-width: 1100px) {
-    z-index: 99;
     width: 100%;
-    justify-content: center;
+    height: 100dvh;
     background-color: #171717;
     text-align: center;
+    position: fixed;
+    top: 0;
+    z-index: 99;
     overflow: auto;
+    right: 0;
+    transition: transform 0.2s ease-in;
+    transform: translateX(${({ show }) => (show ? "0" : "100%")});
   }
 `;
 
@@ -23,8 +28,11 @@ export const NavbarSubList = styled.li`
   list-style: none;
 
   @media only screen and (max-width: 1100px) {
-    top: 0rem;
+    position: static;
     gap: 1rem;
+    padding: 10rem 0;
+    height: 100dvh;
+    justify-content: center;
   }
 `;
 
@@ -62,7 +70,8 @@ export const NavbarSubTopic = styled(NavbarSubLink)<{ color: string }>`
   font-size: 2rem;
 
   @media only screen and (max-width: 1100px) {
-    font-size: 3rem
+    font-size: 3rem;
     border-radius: 0;
+    margin-bottom: 1rem;
   }
 `;

@@ -32,9 +32,11 @@ const WorkingWithDB = () => {
         wynik), pobrać za pomocą pętli wierszy z wyniku, wyświetlić kolumny i
         zakończyć połączenie z bazą.
       </S.SectionContent>
-      <pre>
-        <code className="language-php">{workWithDBCode}</code>
-      </pre>
+      <S.SectionCode>
+        <pre>
+          <code className="language-php">{workWithDBCode}</code>
+        </pre>
+      </S.SectionCode>
       <S.SectionContent>
         Powyżej znajduje się przykład poprawnego skryptu, pobierającego i
         wyświetlającego dane z bazy na stronie. Pamiętaj, że na egzaminie na
