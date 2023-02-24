@@ -8,7 +8,7 @@ export const navbarRawElements = [
     color: "#E34E27",
   },
   {
-    name: "mysql",
+    name: "sql",
     color: "#FF9A00",
   },
   {
@@ -62,4 +62,5 @@ export const topicNavbarLinks = {
     { path: "selektory", title: "Selektory" },
     { path: "najpopularniejsze", title: "Najpopularniejsze właściwości" },
   ],
+  sql: [{ path: "cotojestsql", title: "Co to jest SQL?" }],
 };

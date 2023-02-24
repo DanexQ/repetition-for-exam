@@ -82,3 +82,7 @@ export const ModalButton = styled.span`
     filter: brightness(0.85);
   }
 `;
+
+export const SubTitle = styled.h2`
+  font-size: 2.2rem;
+`;

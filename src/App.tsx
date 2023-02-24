@@ -53,7 +53,7 @@ function App() {
           <Route path="php" element={<PHP />} />
           <Route path="css" element={<CSS />} />
           <Route path="html" element={<HTML />} />
-          <Route path="mysql" element={<SQL />} />
+          <Route path="sql" element={<SQL />} />
         </Route>
       </Routes>
     </SAppContainer>
