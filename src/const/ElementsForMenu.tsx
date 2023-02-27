@@ -22,10 +22,9 @@ export const FrontendInfo = [
 ];
 
 export const BackendInfo = [
-
   {
     id: "969a4926-9ce7-11ed-a8fc-0242ac120002",
     src: "../Icons/mysql.svg",
-    alt: "MySql",
+    alt: "SQL",
   },
 ];

@@ -31,7 +31,6 @@ export const NavbarSubList = styled.li`
     position: static;
     gap: 1rem;
     padding: 10rem 0;
-    height: 100dvh;
     justify-content: center;
   }
 `;

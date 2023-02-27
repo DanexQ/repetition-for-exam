@@ -10,8 +10,7 @@ const lolo = (index: number, bottom: boolean) => keyframes`
   ${
     bottom
       ? `
-      top: 200px;
-      left: ${-150 + index * 300}px;`
+      top: 200px;`
       : `
     top: -200px;
     left: ${-300 + index * 200}px;
@@ -26,8 +25,7 @@ const hideMe = (index: number, bottom: boolean) => keyframes`
   ${
     bottom
       ? `
-      top: 200px;
-      left: ${-150 + index * 300}px;`
+      top: 200px;`
       : `
     top: -200px;
     left: ${-300 + index * 200}px;
@@ -55,7 +53,7 @@ export const Button = styled.button<{
   position: absolute;
   animation-name: ${({ index, bottom, hide }) =>
     hide ? hideMe(index, bottom) : lolo(index, bottom)};
-  animation-duration: ${({ index, hide }) => (hide ? 0.25 : 0.5)}s;
+  animation-duration: ${({ hide }) => (hide ? 0.25 : 0.5)}s;
   animation-delay: ${({ index, hide }) => (!hide ? 0.25 * index : 0)}s;
   animation-fill-mode: both;
   transform: translate(-50%, -50%);

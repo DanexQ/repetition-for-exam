@@ -5,11 +5,19 @@ const TableConnection = () => {
   const highlight = useHighlight();
   highlight();
   const innerJoinCode = `SELECT * FROM filmy INNER JOIN postac ON filmy.film_id=postac.film_id`;
-  const outerJoinCode = `  // LEFT OUTER JOIN - pozwala zwrócić wszystkie filmy i odpowiadające im wartości z tabeli postac
-  // jezeli tabela postac nie ma odpowiednich wartosci to zostanie przypisane NULL.    
-  SELECT * FROM filmy OUTER JOIN postac ON filmy.film_id=postac.film_id`;
+  const leftOuterJoinCode = `  // LEFT OUTER JOIN -  zwraca wszystkie wiersze z lewej tabeltki i dodatkowo wiersze,
+  // które mają uzupełnienie z prawej tabelki.   
+  SELECT * FROM filmy LEFT OUTER JOIN postac ON filmy.film_id = postac.film_id`;
+  const rightOuterJoinCode = `  // RIGHT OUTER JOIN - zwraca wszystkie wiersze z prawej tabelki i dodatkowo wiersze, 
+  // które mają uzupełnienie z lewej tabelki.    
+  SELECT * FROM filmy RIGHT OUTER JOIN postac ON filmy.film_id = postac.film_id`;
+  const fullOuterJoinCode = `  // FULL OUTER JOIN - zwraca wszystkie wiersze z obu tabelek
+  SELECT * FROM filmy FULL OUTER JOIN postac ON filmy.film_id = postac.film_id`;
+  const whereCode = `
+  SELECT * FROM filmy, postac WHERE filmy.film_id = postac.film_id;
+  `;
   return (
-    <S.Section id="polaczanietabel">
+    <S.Section id="laczenietabel">
       <S.SectionTitle>Łączenie tabel</S.SectionTitle>
       <S.SectionContent>
         Łączenie tabel umożliwia odczytywanie danych z wielu tabel jednocześnie.
@@ -34,7 +42,27 @@ const TableConnection = () => {
       </S.SectionContent>
       <S.SectionCode>
         <pre>
-          <code className="language-sql">{outerJoinCode}</code>
+          <code className="language-sql">{leftOuterJoinCode}</code>
+        </pre>
+      </S.SectionCode>
+      <S.SectionCode>
+        <pre>
+          <code className="language-sql">{rightOuterJoinCode}</code>
+        </pre>
+      </S.SectionCode>
+      <S.SectionCode>
+        <pre>
+          <code className="language-sql">{fullOuterJoinCode}</code>
+        </pre>
+      </S.SectionCode>
+      <S.SubTitle>Za pomocą WHERE</S.SubTitle>
+      <S.SectionContent>
+        Łączenie tabelek za pomocą <S.SpanBold>WHERE</S.SpanBold> ma te same
+        działanie co FULL OUTER JOIN.
+      </S.SectionContent>
+      <S.SectionCode>
+        <pre>
+          <code className="language-sql">{whereCode}</code>
         </pre>
       </S.SectionCode>
     </S.Section>

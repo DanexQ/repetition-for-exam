@@ -19,7 +19,7 @@ const LangOption = ({
     <S.Button
       hide={hide}
       index={index}
-      bottom={imgAlt === "MySql"}
+      bottom={imgAlt === "SQL"}
       onClick={() => handleClick(imgAlt.toLowerCase())}
     >
       <S.LangImg src={imgSrc} alt={imgAlt} />

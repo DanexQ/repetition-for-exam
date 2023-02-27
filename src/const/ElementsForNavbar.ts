@@ -62,5 +62,10 @@ export const topicNavbarLinks = {
     { path: "selektory", title: "Selektory" },
     { path: "najpopularniejsze", title: "Najpopularniejsze właściwości" },
   ],
-  sql: [{ path: "cotojestsql", title: "Co to jest SQL?" }],
+  sql: [
+    { path: "cotojestsql", title: "Co to jest SQL?" },
+    { path: "skladnie", title: "Składnie języka SQL" },
+    { path: "agregujace", title: "Funkcje agregujące" },
+    { path: "laczenietabel", title: "Łączenie tabel" },
+  ],
 };
