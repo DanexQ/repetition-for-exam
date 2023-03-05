@@ -1,15 +1,19 @@
-import { useContext, useState } from "react";
+import { SetStateAction, useContext, useState } from "react";
 import { CurrentLocationContext } from "../../context/CurrentLocationContext";
 import { navbarRawElements } from "../../const/ElementsForNavbar";
 import NavbarMainElement from "./NavbarMainElement";
 import TopicNavigate from "../NavbarSub/NavbarSub";
 import * as S from "./NavbarMainStyled";
 
-const NavbarMain = () => {
+interface NavbarMainProps {
+  show: boolean;
+  setShowMobileMenu: React.Dispatch<SetStateAction<boolean>>;
+}
+
+const NavbarMain = ({ show, setShowMobileMenu }: NavbarMainProps) => {
   const { currentLocation, currentLocationColor } = useContext(
     CurrentLocationContext
   );
-  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
 
   const navbarElements = navbarRawElements
     .filter((el) => el.name !== currentLocation)
@@ -24,7 +28,7 @@ const NavbarMain = () => {
   return (
     <S.NavbarContainer>
       <S.MenuButton onClick={handleOnClick}>
-        <S.ShowNavbarSub show={showMobileMenu} />
+        <S.ShowNavbarSub show={show} />
       </S.MenuButton>
       <S.MenuContainer>
         <S.CurrentLocation to={currentLocation} color={currentLocationColor}>
@@ -32,10 +36,7 @@ const NavbarMain = () => {
         </S.CurrentLocation>
         <S.NavbarMenu>{navbarElements}</S.NavbarMenu>
       </S.MenuContainer>
-      <TopicNavigate
-        show={showMobileMenu}
-        setShowMobileMenu={setShowMobileMenu}
-      />
+      <TopicNavigate show={show} setShowMobileMenu={setShowMobileMenu} />
     </S.NavbarContainer>
   );
 };

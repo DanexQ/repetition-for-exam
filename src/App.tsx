@@ -29,27 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route element={<Layout />}>
-          <Route path="javascript">
-            <Route index element={<JS />}></Route>
-            <Route path="coToJestJavaScript" element={<WhatIsJavaScript />} />
-            <Route path="podlaczanie" element={<IncludeJsCode />} />
-            <Route
-              path="deklarowanieZmiennych"
-              element={<DeclaringVariables />}
-            />
-            <Route
-              path="instrukcjeWarunkowe"
-              element={<ConditionalStatements />}
-            />
-            <Route path="zdarzenia" element={<Events />} />
-            <Route path="okienka" element={<PoppingUpModals />} />
-            <Route path="petle" element={<Loops />} />
-            <Route path="funkcje" element={<Functions />} />
-            <Route path="funkcjeWbudowane" element={<BuiltInFunctions />} />
-            <Route path="pobieranieWartosci" element={<FormHandling />} />
-            <Route path="zmianaWnetrza" element={<ChangeContent />} />
-            <Route path="zmianaStylu" element={<ChangeStyle />} />
-          </Route>
+          <Route path="javascript" element={<JS />} />
           <Route path="php" element={<PHP />} />
           <Route path="css" element={<CSS />} />
           <Route path="html" element={<HTML />} />

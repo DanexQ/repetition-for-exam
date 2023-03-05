@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useLayoutEffect } from "react";
 import * as S from "../assets/StyledComponents";
 import Prism from "prismjs";
 import { CurrentLocationContext } from "../context/CurrentLocationContext";
@@ -18,7 +18,7 @@ import ChangeStyle from "../components/JavaScript/ChangeStyle";
 const JS = () => {
   const { setCurrentLocation } = useContext(CurrentLocationContext);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setCurrentLocation("javascript");
     Prism.highlightAll();
   }, []);

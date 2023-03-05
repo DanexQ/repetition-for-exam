@@ -4,13 +4,19 @@ import TopicNavigate from "./NavbarSub/NavbarSub";
 import Navbar from "./NavbarMain/NavbarMain";
 import Footer from "./Footer";
 import { NavbarSubContainer } from "./NavbarSub/NavbarSubStyled";
+import { useState } from "react";
 
 const Layout = () => {
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
+
   return (
     <Prefix>
-      <TopicNavigate />
+      <TopicNavigate
+        show={showMobileMenu}
+        setShowMobileMenu={setShowMobileMenu}
+      />
       <MiddleContainer>
-        <Navbar />
+        <Navbar show={showMobileMenu} setShowMobileMenu={setShowMobileMenu} />
         <Outlet />
         <Footer />
       </MiddleContainer>

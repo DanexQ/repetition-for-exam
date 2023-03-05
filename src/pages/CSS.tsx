@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useLayoutEffect } from "react";
 import WhatIsCSS from "../components/CSS/WhatIsCSS";
 import * as S from "../assets/StyledComponents";
 import { CurrentLocationContext } from "../context/CurrentLocationContext";
@@ -9,7 +9,7 @@ import MostPopular from "../components/CSS/MostPopular";
 const CSS = () => {
   const { setCurrentLocation } = useContext(CurrentLocationContext);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setCurrentLocation("css");
   }, []);
 

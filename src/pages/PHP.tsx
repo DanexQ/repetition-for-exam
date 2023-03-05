@@ -1,5 +1,5 @@
 import Prism from "prismjs";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useLayoutEffect } from "react";
 import * as S from "../assets/StyledComponents";
 import ConditionalStatements from "../components/PHP/ConditionalStatements";
 import DeclaringVariables from "../components/PHP/DeclaringVariables";
@@ -15,7 +15,7 @@ import { CurrentLocationContext } from "../context/CurrentLocationContext";
 const PHP = () => {
   const { setCurrentLocation } = useContext(CurrentLocationContext);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setCurrentLocation("php");
     Prism.highlightAll();
   }, []);

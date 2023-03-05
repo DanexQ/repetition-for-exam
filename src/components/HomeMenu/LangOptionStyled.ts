@@ -10,14 +10,15 @@ const lolo = (index: number, bottom: boolean) => keyframes`
   ${
     bottom
       ? `
-      top: 200px;`
+      top: 20rem;`
       : `
-    top: -200px;
-    left: ${-300 + index * 200}px;
+    top: -20rem;
+    left: calc(var(--center) + ${index} * var(--icon-gap));
   `
   }
     
 }
+
 `;
 
 const hideMe = (index: number, bottom: boolean) => keyframes`
@@ -28,7 +29,7 @@ const hideMe = (index: number, bottom: boolean) => keyframes`
       top: 200px;`
       : `
     top: -200px;
-    left: ${-300 + index * 200}px;
+    left: calc(var(--center) + ${index} * var(--icon-gap));
   `
   }
     
@@ -67,6 +68,16 @@ export const Button = styled.button<{
 
   &:active {
     transform: translate(-50%, -50%) scale(0.95);
+  }
+  --icon-gap: 200px;
+  --center: -300px;
+  @media only screen and (max-width: 800px) {
+    --icon-gap: 100px;
+    --center: -150px;
+  }
+  @media only screen and (max-width: 500px) {
+    --icon-gap: 80px;
+    --center: -120px;
   }
 `;
 

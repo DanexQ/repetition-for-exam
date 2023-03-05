@@ -5,7 +5,13 @@ const Footer = () => {
   return (
     <FooterContainer>
       <S.SectionTitle>
-        Praktyka czyni mistrza! Link do wszystkich egzaminów z poprzednich lat
+        Praktyka czyni mistrza! Link do wszystkich egzaminów z poprzednich lat:{" "}
+        <a
+          href="https://www.praktycznyegzamin.pl/inf03ee09e14/praktyka/"
+          style={{ color: "yellow" }}
+        >
+          praktycznyegzamin.pl
+        </a>
       </S.SectionTitle>
     </FooterContainer>
   );
