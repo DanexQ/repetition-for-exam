@@ -24,8 +24,7 @@ const PHP = () => {
     <S.Container>
       <WhatIsPHP />
       <IncludePHPCode />
-      <DeclaringVariables />
-      <ConditionalStatements />
+      <DeclaringVariables /> <ConditionalStatements />
       <WorkingWithDB />
       <WorkingWithForms />
       <WorkingWithCookies />
