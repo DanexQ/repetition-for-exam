@@ -10,8 +10,6 @@ const Home = () => {
   const [showMenu, setShowMenu] = useState({ 0: false, 1: false });
   const [hideMenu, setHideMenu] = useState({ 0: false, 1: false });
 
-  console.log("showMenu", showMenu, "\nhideMenu", hideMenu);
-
   const handleClick = (url: string) => {
     navigate(`${url}`);
   };
